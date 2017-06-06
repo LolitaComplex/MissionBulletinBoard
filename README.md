@@ -3,4 +3,4 @@
 
 1. [深入Android——Gradle](1.%20Gradle/MissionStart.md)
 
-2. [软实力——逻辑力](https://github.com/LolitaComplex/MissionBulletinBoard/tree/MadProgramer/2.%20Logical)
+2. [软实力——逻辑力](2.%20Logical)

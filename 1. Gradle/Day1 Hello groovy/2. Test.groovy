@@ -19,3 +19,5 @@ println range.to
 range = 1..<10  //包含[1, 10)的List
 println range
 println range[5]
+
+

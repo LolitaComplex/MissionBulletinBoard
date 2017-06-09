@@ -1,0 +1,3 @@
+include ':app'
+
+println "Setting配置开始了！！！！！！" + this + "\t" + gradle.hashCode()

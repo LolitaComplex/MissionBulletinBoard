@@ -1,0 +1,56 @@
+def map = [plugin:'com.android.application']
+apply map
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.doing.gradletest"
+        minSdkVersion 21
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:25.1.0'
+}
+
+//println this.toString() + "\t" + gradle.hashCode()
+//
+//Closure clo = {
+//    param1 ->
+//        println "闭包调用" + gradle.api;
+//}
+//
+//clo plugin: 'com.android.application'
+//
+//def name = tasks.getByName("assemble")
+//println name.toString()
+//println defaultTasks
+
+println rootDir.absolutePath
+println buildDir.absolutePath
+buildscript.dependencies {
+    println it
+}
+
+println childProjects
+println dependencies
+println projectDir.absolutePath
+println version
+
+tasks.getByName(""){
+    it.dolash
+}
+
+
+

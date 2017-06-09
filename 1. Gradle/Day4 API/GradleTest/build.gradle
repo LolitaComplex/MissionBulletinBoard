@@ -1,0 +1,66 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.2'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+println "Project build配置开始了！！！！！！" + this + "\t" + gradle.hashCode()
+
+println "=================="
+
+println "HomeDir:\t" + gradle.gradleHomeDir
+
+println "HomeUserDri:\t" + gradle.gradleUserHomeDir
+
+println "GradleVersion:\t" + gradle.gradleVersion
+
+println "GradleParent:\t" + gradle.parent
+
+gradle.beforeProject {
+    println  "================" + "Before Project" + "================" + it;
+}
+
+gradle.buildFinished {
+    println  "================" + "Build Finished" + "================" + it
+}
+
+gradle.buildStarted {
+    println  "================" + "Build Start" + "================" + it
+}
+
+gradle.taskGraph.whenReady {
+    println "================" + "TaskGraph WhenReady" + "================" + it
+}
+
+//gradle.taskGraph.beforeTask {
+//    println "================" + "TaskGraph BeforeTask" + "================"
+//}
+//
+//gradle.taskGraph.afterTask {
+//    println "================" + "TaskGraph AfterTask" + "================"
+//}
+
+gradle.ext.api = "公有变量" + project.hashCode()
+println gradle.api
+
+println "=================="
+
+

@@ -62,7 +62,7 @@ def closure = {
 
 3. 用途
 - 可以增长某些变量生命周期、私有某些变量、统一初始化变量等的作用。例子中写了一个，这在JS中有很重要的用途
-- 在Groovy中最重要的作用在于与三个简写规则连用，能写出脚本格式的语言
+- 在Groovy中最重要的作用在于与简写规则连用，能写出脚本格式的语言
 ```groovy
 //这段脚本中包含4处简写，两处闭包的使用
 task android {
@@ -71,9 +71,29 @@ task android {
     }
 }
 ```
-- `task android`: 系统函数task(，省略小括号()
+- `task android`: 系统函数task，省略小括号()
 - `android(Closure)`: 函数android因为参数列表最后一个参数是`Closure`类型，可省略小括号
 - `defultConfig(Closure)`：同上
 - `version 1`：系统函数version(int)，省略小括号
+
+```groovy
+def getByName(String name, Closure closure){
+    closure(name)
+}
+
+getByName("蓬莱山辉夜", {
+    println it
+})
+
+getByName("蓬莱山辉夜"){
+    println it
+}
+```
+- 以上`getByName()`需要两个参数，由于第二个参数是Closure是闭包，调用时可以写成第二种样式，看起来就像声明函数，而非调用函数
+
+```groovy 
+apply plugin:'com.android.application'
+```
+- 实际上是 `apply([plugin:'com.android.application'])`，apply函数需要一个Map类型的参数
 
 

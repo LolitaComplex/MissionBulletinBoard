@@ -48,9 +48,6 @@ println dependencies
 println projectDir.absolutePath
 println version
 
-tasks.getByName(""){
-    it.dolash
-}
 
 
 

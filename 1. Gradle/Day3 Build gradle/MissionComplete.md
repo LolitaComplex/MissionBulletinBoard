@@ -11,7 +11,7 @@
 
 ## 重要概念
 
-![Gradle工作流程](../../image/1.%20Gradle_Workline.png)
+![Gradle工作流程](../../image/Gradle_Workline.png)
 - 初始化阶段及解析Setting.gradle文件创建Setting对象
 - 配置阶段会解析每个子目录中的build.gradle，Configuration会建立一个有向图来描述Task之间的依赖关系
 - 执行任务

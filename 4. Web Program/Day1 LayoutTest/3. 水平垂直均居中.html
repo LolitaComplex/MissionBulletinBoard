@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>水平垂直均居中</title>
+    <style type="text/css">
+        body>div{
+            background-color: orange;
+            height: 150px;
+            width: 300px;
+        }
+
+        div>div{
+            background-color: purple;
+        }
+        
+        /*兼容性好的方案：*/
+        .parent1{
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .child1{
+            display: inline-block;
+            text-align: left;
+        }
+
+        /*相对定位的方案*/
+        .parent2{
+            position: relative;
+        }
+
+        .child2{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        /*flex*/
+        .parent3{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>水平垂直均居中(父容器与子容器宽高均不固定)</h2>
+    <h3>text-align + inline-block + table-cell + vertical-align</h3>
+    <div class="parent1">
+        <div class="child1">Demo</div>
+    </div>
+
+    <h3>table+margin</h3>
+    <div class="parent2">
+        <div class="child2">Demo</div>
+    </div>
+
+    <h3>absolute+tarnsform</h3>
+    <div class="parent3">
+        <div class="child3">Demo</div>
+    </div>
+
+</body>
+</html>
+
+<!--
+    优点：兼容性好
+
+    ===========
+
+    优点：脱离文档流，居中不影响其他控件
+
+-->

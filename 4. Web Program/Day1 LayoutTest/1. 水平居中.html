@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>水平居中</title>
+    <style type="text/css">
+        body>div{
+            background-color: red;
+        }
+
+        div>div{
+            background-color: gray;
+        }
+
+        /*inline-block*/
+        .parent1{
+            text-align: center;
+        }
+        .child1{
+            display: inline-block;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        /*display:table*/
+        .child2{
+            display: table;
+            margin: 0 auto;
+        }
+
+        /*absolute*/
+        .parent3{
+            height: 50px;
+            position: relative;
+        }
+        .child3{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /*flex*/
+        .parent4{
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>水平居中(父容器与子容器宽高均不固定)</h2>
+    <h3>text-align:center</h3>
+    <div class="parent1">
+        <div class="child1">Demo</div>
+    </div>
+
+    <h3>table+margin</h3>
+    <div class="parent2">
+        <div class="child2">Demo</div>
+    </div>
+
+    <h3>absolute+tarnsform</h3>
+    <div class="parent3">
+        <div class="child3">Demo</div>
+    </div>
+
+    <h3>flex+justify-content</h3>
+    <div class="parent4">
+        <div class="child4">Demo</div>
+    </div>
+</body>
+</html>
+
+<!--
+    1. inline-block会让块状元素宽度为内容宽度
+    2. 通过text-aligin设置内容的居中
+
+    优点：兼容性很好，虽然inline-block在ie6,7不支持，可是可以通过额外的方法实现inline-block的效果
+    缺点：父容器的text-align会让子元素继承，从而子元素中的内容也是居中的，我们需要用额外的代码text-aligin=left来修复该问题
+
+    =======
+    
+
+    1. display:table很像block元素，不过宽度会随着内容走
+    2. 通过margin设置居中
+
+    缺点：如果要兼容ie6,7的话，需要把结构Html换成Table结构 
+
+    =======
+
+    优点：绝对定位是脱离文档流的，居中的元素不会对其他元素产生影响
+    缺点：transform是css3新特性，而且相对的父元素会失去高度，对于ie6,7,8无法实现。在高版本中需要加一些私有前缀
+
+    =======
+
+    缺点：兼容问题，ie6,7,8不支持
+
+-->

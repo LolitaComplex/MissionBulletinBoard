@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pratice列表</title>
+    <style type="text/css">
+        .item1, .divItem1{
+            height: 100px;
+            background-color: green;
+        }
+
+        .item2, .divItem2{
+            height: 200px;
+            background-color: peru;
+        }
+
+        
+        .item3, .divItem3{
+            height: 50px;
+            background-color: cornflowerblue;
+        }
+
+        
+        .item4, .divItem4{
+            height: 175px;
+            background-color: blueviolet;
+        }
+
+
+        /*列表*/
+        ul{
+            list-style: none;
+            list-style-type: none;
+        }
+        li{
+            width: 50px;
+            display: inline-block;
+        }
+
+        /*兼容性较好*/
+        .parent1{
+            vertical-align: bottom; 
+            display: table-cell;
+        }
+
+        .parent1 div{
+            display: inline-block;
+            width: 50px;
+            margin-right: -5px;
+        }
+
+        /*flex*/
+        .parent2{
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .parent2 div{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h2>方式1：使用列表标签</h2>
+    <ul>
+        <li class="item1"/>
+        <li class="item2"/>
+        <li class="item3"/>
+        <li class="item4"/>
+    </ul>
+
+    <h2>方式2：兼容性较好方式</h2>
+    <div class="parent1">
+        <div 
+            <span class="divItem1"/>
+        </div>
+        <div 
+            <span class="divItem2"/>
+        </div>
+        <div 
+            <span class="divItem3"/>
+        </div>
+        <div 
+            <span class="divItem4"/>
+        </div>
+    </div>
+
+    <h2>方式3：Flex</h2>
+    <div class="parent2">
+        <div class="divItem1"></div>
+        <div class="divItem2"></div>
+        <div class="divItem3"></div>
+        <div class="divItem4"></div>
+    </div>
+</body>
+</html>
